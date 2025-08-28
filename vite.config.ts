@@ -16,6 +16,12 @@ export default defineConfig((config) => {
     build: {
       target: 'esnext',
     },
+    server: {
+      allowedHosts: [
+        'bolt-clone-dusb.onrender.com', // ✅ allow your Render domain
+      ],
+      host: true, // optional: allow external access
+    },
     plugins: [
       nodePolyfills({
         include: ['buffer', 'process', 'util', 'stream'],
